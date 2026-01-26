@@ -1,0 +1,10 @@
+
+## Ansible Playbook to ping servers in the 'frontend' group
+
+- name: ping the sever
+  hosts: frontend # specify which group of servers to target
+
+  # List of tasks/collections/modules to be executed on the target servers
+  tasks:
+    - name: ping the server to check connectivity
+      ansible.builtin.ping:

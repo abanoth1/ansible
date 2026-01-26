@@ -1,0 +1,15 @@
+## Working on the nginx server yaml file
+
+- name: install and start nginx server
+  hosts: frontend
+  tasks:
+   - name: install nginx server
+     ansible.builtin.pacakage:
+       name: nginx
+       state: present
+
+    - name: start nginx server
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
