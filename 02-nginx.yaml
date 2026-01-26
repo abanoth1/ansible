@@ -2,9 +2,10 @@
 
 - name: install and start nginx server
   hosts: frontend
+  become: yes # to get root privileges
   tasks:
    - name: install nginx server
-     ansible.builtin.pacakage:
+     ansible.builtin.package:
        name: nginx
        state: present
 
