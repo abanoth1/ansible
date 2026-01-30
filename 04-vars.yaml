@@ -10,3 +10,5 @@
   - name: print the course info
     ansible.builtin.debug:
       msg: "Course Name is: {{ COURSE }}, Duratioin: {{ DURATION }}, Trainer: {{ Trainer }}"
+
+      ## {{}} is used to access the variable values in ansible playbooks
