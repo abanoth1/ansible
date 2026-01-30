@@ -22,3 +22,6 @@
   - name: PLAY-02 and TASK-02
     ansible.builtin.debug:
       msg: "Hello from PLAY-02 and TASK-02"
+
+  ## You can add more plays as needed
+  ## Each play can have its own set of hosts and tasks    
