@@ -1,0 +1,17 @@
+## Working on Play Level Variables in Ansible Playbook with local Connection
+- name: play level variables
+  hosts: local
+  connection: local # Ansible is connecting to localhost
+  vars:
+    COURSE: Ansible
+    DURATION: 10HRS
+    Trainer: Sivakumar reddy
+  tasks:
+  - name: print the course info
+    vars:                      # Task level variables definition will override play level variables this is called as inheritance in ansible
+                          # here we are overriding the COURSE variable value
+      COURSE: anisible-updated
+    ansible.builtin.debug:
+      msg: "Course Name is: {{ COURSE }}, Duratioin: {{ DURATION }}, Trainer: {{ Trainer }}"
+
+      ## {{}} is used to access the variable values in ansible playbooks
