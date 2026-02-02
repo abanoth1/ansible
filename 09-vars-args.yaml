@@ -1,0 +1,10 @@
+# Here I'm working with variables by arguments defined in the inventory file by passing --extra-vars in the command line
+# This playbook will demonstrate how to use inventory file variables in Ansible playbooks
+
+- name: variables from inventory file
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print the course info from inventory file
+      ansible.builtin.debug:
+        msg: "Course Name is: {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
