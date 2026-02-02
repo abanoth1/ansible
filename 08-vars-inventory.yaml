@@ -1,0 +1,12 @@
+# Here I'm working with variables defined in the inventory file
+# This playbook will demonstrate how to use inventory file variables in Ansible playbooks
+- name: variables from inventory file
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print the course info from inventory file
+      ansible.builtin.debug:
+        msg: "Course Name is: {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
+
+      # Here the variable values are fetched from the inventory file 'inventory.ini'
+      # Loaded the variables from the inventory file and printed them using debug module
