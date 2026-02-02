@@ -1,0 +1,5 @@
+# Creating a YAML file for Ansible course details and will call it in ansible playbook
+
+COURSE: Ansible
+DURATION: 10HRS
+Trainer: Sivakumar reddy

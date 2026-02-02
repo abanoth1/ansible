@@ -1,0 +1,15 @@
+# This file contains variables for the Ansible course playbook
+# It is used to demonstrate how to include variable files in Ansible playbooks and call the separate YAML file for variables
+
+- name: variables for files
+  hosts: local
+  connection: local
+  vars_files:
+    - course.yaml   # Including the external YAML file which contains variable definitions
+  tasks:
+  - name: print the course info from vars file
+    ansible.builtin.debug:
+      msg: "Course Name is: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ Trainer }}"
+
+      # {{}} is used to access the variable values in ansible playbooks
+      # Here the variable values are fetched from the external YAML file 'course.yaml' included using vars_files directive
