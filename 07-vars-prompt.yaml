@@ -8,9 +8,10 @@
     - name: username
       prompt: Please enter your username
       private: no
-      tasks:
+  tasks:
     - name: print the username entered by user
       ansible.builtin.debug:
         msg: "The username entered is: {{ username }}"
-
- #        
+        
+      # Here we are using vars_prompt to get the username input from user at runtime
+      # The entered username is then printed using the debug module
