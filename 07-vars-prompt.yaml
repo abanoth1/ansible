@@ -6,12 +6,16 @@
   connection: local
   vars_prompt:
     - name: username
-      prompt: Please enter your username
+      prompt: Please enter your username?
       private: no
+    - name: password
+      prompt: Please enter your password?
+      private: yes  
   tasks:
     - name: print the username entered by user
       ansible.builtin.debug:
-        msg: "The username entered is: {{ username }}"
-        
+        msg: "The username entered is: {{ username }}, and password is: {{ password }}"
+
       # Here we are using vars_prompt to get the username input from user at runtime
       # The entered username is then printed using the debug module
+      # The password variable is marked as private so it will not be displayed on the screen when entered
