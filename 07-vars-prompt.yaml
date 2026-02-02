@@ -1,0 +1,16 @@
+# Here is i'm working with the varibale with prompt input from user
+# This playbook will demonstrate how to use vars_prompt to get input from user at runtime
+
+- name: Varibale for prompt
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: username
+      prompt: Please enter your username
+      private: no
+      tasks:
+    - name: print the username entered by user
+      ansible.builtin.debug:
+        msg: "The username entered is: {{ username }}"
+
+ #        

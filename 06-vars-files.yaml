@@ -13,3 +13,4 @@
 
       # {{}} is used to access the variable values in ansible playbooks
       # Here the variable values are fetched from the external YAML file 'course.yaml' included using vars_files directive
+      # Loaded the variables from the file and printed them using debug module
