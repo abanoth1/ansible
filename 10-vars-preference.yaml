@@ -20,6 +20,11 @@
         msg: "Name: {{ NAME }}"
 
 
+  # 1. args or command line variables have the highest precedence
+
+
+
+
       # Here the variable values are fetched from different sources to demonstrate variable precedence order
       # COURSE and DURATION are fetched from the external YAML file 'course.yaml' included using vars_files directive
       # Trainer variable is fetched from user input at runtime using vars_prompt directive
