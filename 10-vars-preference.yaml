@@ -8,10 +8,10 @@
     NAME: from playbook level
   # vars_files:
   #   - course.yaml   # Including the external YAML file which contains variable definitions
-  vars_prompt:
-    - name: trainer
-      prompt: Please enter the trainer name?
-      private: no
+  # vars_prompt:
+  #   - name: trainer
+  #     prompt: Please enter the trainer name?
+  #     private: no
   tasks:
     - name: print the course info with variable preference
       # vars:
