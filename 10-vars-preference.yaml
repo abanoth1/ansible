@@ -17,8 +17,8 @@
       vars:
       NAME: from task level
       ansible.builtin.debug:
-        msg: "Course Name is: {{ COURSE }}"
-        
+        msg: "Name: {{ NAME }}"
+
 
       # Here the variable values are fetched from different sources to demonstrate variable precedence order
       # COURSE and DURATION are fetched from the external YAML file 'course.yaml' included using vars_files directive
