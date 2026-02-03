@@ -6,8 +6,8 @@
   connection: local
   vars:
     NAME: from playbook level
-  vars_files:
-    - course.yaml   # Including the external YAML file which contains variable definitions
+  # vars_files:
+  #   - course.yaml   # Including the external YAML file which contains variable definitions
   vars_prompt:
     - name: trainer
       prompt: Please enter the trainer name?
@@ -22,6 +22,8 @@
 
   # 1. args or command line variables have the highest precedence
   # 2. vars_prompt variables have the second highest precedence
+  # 3. vars defined in the playbook have the third highest precedence
+  # 4. vars_files variables have the lowest precedence
 
 
 
