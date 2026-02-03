@@ -1,0 +1,25 @@
+# Working on Data Types in Ansible Playbook
+- name: data types in ansible
+  hosts: localhost
+  connection: local
+  vars:
+    Course: "DevSecOps with AWS" # String Data Type
+    Duration: 120    # Integer Data Type
+    is_active: true # Boolean Data Type
+
+    tools: 
+      - shell
+      - Ansible
+      - Terraform
+      - Docker
+    concepts:  # Dictionary or Map Data Type
+      cloud: AWS
+      cm: Ansible
+      container: Docker
+  tasks:
+    - name: print course info
+      ansible.builtin.debug:
+        msg: "Course: {{ Course }}, Duration: {{ Duration }}, Active: {{ is_active }}, Tools: {{ tools }}, Concepts: {{ concepts }}"
+
+      # Here we are defining different data types in ansible playbook using vars
+      # String, Integer, Boolean, List, Dictionary data types are defined and printed using debug

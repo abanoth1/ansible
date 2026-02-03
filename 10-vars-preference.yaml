@@ -21,10 +21,11 @@
 
 
   # 1. args or command line variables have the highest precedence
-  # 2. vars_prompt variables have the second highest precedence
+  # 2. From task variables have the second highest precedence
   # 3. vars_files variables have the third highest precedence
   # 4. prompt is the fourth highest precedence
   # 5. playbook level variables have the lowest precedence
+  # 6. inventory file variables have the lowest precedence
 
 
 
