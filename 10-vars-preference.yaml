@@ -14,13 +14,14 @@
       private: no
   tasks:
     - name: print the course info with variable preference
-      vars:
-         NAME: from task level
+      # vars:
+      #    NAME: from task level
       ansible.builtin.debug:
         msg: "Name: {{ NAME }}"
 
 
   # 1. args or command line variables have the highest precedence
+  # 2. vars_prompt variables have the second highest precedence
 
 
 
