@@ -4,6 +4,8 @@
 - name: varibale preference order
   hosts: localhost
   connection: local
+  vars:
+    NAME: from playbook level
   vars_files:
     - course.yaml   # Including the external YAML file which contains variable definitions
   vars_prompt:
@@ -12,8 +14,11 @@
       private: no
   tasks:
     - name: print the course info with variable preference
+      vars:
+      NAME: from task level
       ansible.builtin.debug:
-        msg: "Course Name is: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ trainer }}"
+        msg: "Course Name is: {{ COURSE }}"
+        
 
       # Here the variable values are fetched from different sources to demonstrate variable precedence order
       # COURSE and DURATION are fetched from the external YAML file 'course.yaml' included using vars_files directive
