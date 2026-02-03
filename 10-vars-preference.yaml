@@ -1,0 +1,21 @@
+# Here I'm working on variable with preference order in Ansible playbooks
+# This playbook will demonstrate the variable precedence order in Ansible playbooks
+
+- name: varibale preference order
+  hosts: localhost
+  connection: local
+  vars_files:
+    - course.yaml   # Including the external YAML file which contains variable definitions
+  vars_prompt:
+    - name: trainer
+      prompt: Please enter the trainer name?
+      private: no
+  tasks:
+    - name: print the course info with variable preference
+      ansible.builtin.debug:
+        msg: "Course Name is: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ trainer }}"
+
+      # Here the variable values are fetched from different sources to demonstrate variable precedence order
+      # COURSE and DURATION are fetched from the external YAML file 'course.yaml' included using vars_files directive
+      # Trainer variable is fetched from user input at runtime using vars_prompt directive
+      # The entered trainer name will take precedence over the value defined in the vars file if any
