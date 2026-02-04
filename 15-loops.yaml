@@ -7,7 +7,7 @@
   tasks:
     - name: Printing the packages names
       ansible.builtin.package:
-         name: "{{}}"
+         name: "{{ item}}" # Using loop variable 'item' to refer to the current package name
          state: latest
       loop:
         - nginx
