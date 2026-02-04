@@ -13,8 +13,7 @@
       loop:
         - nginx
         - mysql
-        - mongodb
-        - redis
+        - zip
 
 # Here we are using the debug module to print numbers from 1 to 5
 # The 'loop' directive is used to iterate over a list of items and perform the same task for each item in the list
