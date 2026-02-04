@@ -1,0 +1,13 @@
+# working on facts gathering in ansible playbook
+# This playbook will demonstrate how to gather and use facts in Ansible playbooks
+
+- name: Gathering the facts
+  hosts: localhost
+  connection: local
+  # By default, Ansible gathers facts about the target hosts before executing any tasks
+  tasks:
+    - name: Print all gathered facts
+      ansible.builtin.debug:
+        var: ansible_facts
+      # Here we are using the debug module to print all the gathered facts about the localhost
+      # The 'ansible_facts' variable contains all the information collected by Ansible about the target host
