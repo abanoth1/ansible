@@ -1,0 +1,19 @@
+# Here working with advanced loops in ansible playbook
+# This playbook will demonstrate how to use loops in Ansible playbooks
+
+- name: Installin the packages using loops
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Printing the packages names
+      ansible.builtin.package:
+         name: "{{ item.name }}"    # Using loop variable 'item' to refer to the current package name
+         state: "{{ item.state }}"
+      loop:
+        - {name: "nginx", state: "absent"}
+        - {name: "mysql", state: "absent"}
+        - {name: "zip", state: "absent"}
+
+# Here we are using the debug module to print the packages names and their states
+# The 'loop' directive is used to iterate over a list of dictionaries and perform the same task for each item in the list
