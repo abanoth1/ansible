@@ -4,6 +4,7 @@
 - name: Installin the packages using loops
   hosts: localhost
   connection: local
+  become: yes
   tasks:
     - name: Printing the packages names
       ansible.builtin.package:
