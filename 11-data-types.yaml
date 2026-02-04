@@ -23,3 +23,6 @@
 
       # Here we are defining different data types in ansible playbook using vars
       # String, Integer, Boolean, List, Dictionary data types are defined and printed using debug
+
+# list : [] this is used to define list data type in ansible
+# map : {} this is used to define dictionary data type in ansible

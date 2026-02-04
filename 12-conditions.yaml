@@ -1,0 +1,13 @@
+#  Here i'm working with conditions in ansible playbook
+#  This playbook will demonstrate how to use conditions in Ansible playbooks
+- name: conditions in ansible
+  hosts: local
+  connection: local
+  vars:
+    number: 9
+    tasks:
+    - name: Check if the number is less than 10
+      ansible.builtin.debug:
+        msg: "The number {{ number }} is less than 10"
+      when: number < 10  # Condition to check if number is less than 10
+      
