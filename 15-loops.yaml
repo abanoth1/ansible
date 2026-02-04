@@ -1,0 +1,19 @@
+# Here working with loops in ansible playbook
+# This playbook will demonstrate how to use loops in Ansible playbooks
+
+- name: loops in ansible
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print numbers from 1 to 5 using loop
+      ansible.builtin.debug:
+        msg: "Number is {{ item }}" # Using loop to iterate over a list of numbers
+      loop:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+
+# Here we are using the debug module to print numbers from 1 to 5
+# The 'loop' directive is used to iterate over a list of items and perform the same task for each item in the list
