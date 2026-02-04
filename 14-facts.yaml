@@ -2,6 +2,7 @@
 - name: using facts in ansible
   hosts: localhost
   connection: local
+  become: yes # to get root privileges for installing packages
   tasks:
     - name: install nginx if redhat
       ansible.builtin.dnf:
