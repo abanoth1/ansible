@@ -1,0 +1,17 @@
+# Working on facts in ansible playbook
+- name: using facts in ansible
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: install nginx if redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      when: ansible_facts['os_family'] == "RedHat" # Making use of ansible_ while accessing facts
+
+    - name: install nginx if debian
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      when: ansible_facts['os_family'] == "Debian" # Making use of ansible_ while accessing facts
+        
