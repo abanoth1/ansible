@@ -3,7 +3,16 @@
 - name: using the functions in ansible playbooks
   hosts: localhost
   connection: local
+  vars: 
+    technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
   tasks:
     - name: Using the default variable in ansible playbook
       ansible.builtin.debug:
         msg: "My name is {{ name | default ('Ansible')}}" # Using the 'default' filter to provide a default value for the variable 'name' if it is not defined
+
+
+# String to list conversion using the 'split' filter
+    - name: Converting string to list using split function
+      ansible.builtin.debug:
+        msg: "The technologies I am interested in are: {{ technologies.split(', ') }}" 
+        # Using the 'split' filter to convert the string variable 'technologies' into a list by splitting it at the comma and space
