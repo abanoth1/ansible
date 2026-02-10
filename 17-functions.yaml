@@ -7,7 +7,7 @@
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
     name: "Ajay Naik Banoth"
     gmail: "Banoth.Ajay@gmail.com "
-    ip_address: "192.168.1.1"
+    ip_address: "19256.168.1.1"
 
     # Here dictionary == map in ansible playbook
     tags:
