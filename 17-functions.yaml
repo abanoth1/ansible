@@ -7,7 +7,7 @@
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
 
     # Here dictionary == map in ansible playbook
-    tags:
+  tags:
       Application: Web
       Environment: Production
   tasks:
