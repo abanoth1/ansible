@@ -81,3 +81,14 @@
       ansible.builtin.debug:
         msg: "Is the IP address {{ ip_address }} valid? {{ ip_address | ansible.utils.ipv4 }}" 
         # Using the 'ipaddr' filter to check if the string variable 'ip_address' is a valid IP address
+
+
+# working on shell and command module in ansible playbook
+    - name: grep for root
+      ansible.builtin.command: "cat /etc/passwd | grep root"
+      register: grep_result # Registering the output of the command to a variable 'grep_result'
+
+    - name: Displaying the result of the grep command
+      ansible.builtin.debug:
+        msg: "The result of the grep command is: {{ grep_result }}" 
+        # Using the 'debug' module to display the standard output of the registered variable 'grep_result'
