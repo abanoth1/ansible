@@ -11,7 +11,7 @@
      register: user_check
      ignore_errors: yes
 
-   - name: print the user output
+   - name: print the user output in to json format
      ansible.builtin.debug:
        msg: "The user check output is: {{ user_check | to_json }}"
   
