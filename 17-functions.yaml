@@ -97,3 +97,13 @@
       ansible.builtin.debug:
         msg: "The result of the grep command is: {{ grep_result }}" 
         # Using the 'debug' module to display the standard output of the registered variable 'grep_result'
+
+# this command is for redirecting the output of the command to a file
+    - name: Redirecting the output of the command to a file
+      ansible.builtin.shell: "cat /etc/passwd | grep root > /tmp/grep_result.txt" 
+      register: redirect_result # Registering the result of the command to a variable 'redirect_result'
+
+    - name: Displaying the result of the redirect command
+      ansible.builtin.debug:
+        msg: "The result of the redirect command is: {{ redirect_result }}" 
+        # Using the 'debug' module to display the standard output of the registered variable 'redirect_result'
