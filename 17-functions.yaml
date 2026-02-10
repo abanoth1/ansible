@@ -84,9 +84,14 @@
 
 
 # working on shell and command module in ansible playbook
-    - name: grep for root
-      ansible.builtin.command: "cat /etc/passwd | grep root"
+    # - name: grep for root
+    #   ansible.builtin.command: "cat /etc/passwd | grep root"
+    #   register: grep_result # Registering the output of the command to a variable 'grep_result'
+
+    - name: grep for root using shell module
+      ansible.builtin.shell: "cat /etc/passwd | grep root" # Using the 'shell' module to execute the command "cat /etc/passwd | grep root" on the target host and capture the output
       register: grep_result # Registering the output of the command to a variable 'grep_result'
+
 
     - name: Displaying the result of the grep command
       ansible.builtin.debug:
