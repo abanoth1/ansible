@@ -58,7 +58,6 @@
 # Here i'm using the copy plugin to copy the JSON in to a file
     - name: Copying the JSON string to a file
       ansible.builtin.copy:
-        content: "{{ student_yaml | to_json }}"
         dest: "/tmp/student-data.json" 
-        content: "{{ student_yaml | to_json }}"
+        content: "{{ student_yaml | to_nice_json }}"
         # Using the 'copy' module to write the JSON string representation of the 'student_yaml' variable to a file located at '/tmp/student-data.json'
