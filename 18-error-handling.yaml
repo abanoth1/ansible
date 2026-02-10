@@ -13,7 +13,7 @@
 
    - name: print the user output
      ansible.builtin.debug:
-       msg: "The user check output is: {{ user_check | to_json }}"
+       msg: "The user check output is: {{ user_check | to_nice_json }}"
   
    - name: createting the user if it does not exist
      ansible.builtin.command: "useradd robodshop"
