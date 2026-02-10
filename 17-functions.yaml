@@ -91,6 +91,7 @@
     - name: grep for root using shell module
       ansible.builtin.command: "cat /etc/passwd | grep root" # Using the 'shell' module to execute the command "cat /etc/passwd | grep root" on the target host and capture the output
       register: grep_result # Registering the output of the command to a variable 'grep_result'
+      ignore_errors: yes # Ignoring any errors that may occur during the execution of the command
 
 
     - name: Displaying the result of the grep command
