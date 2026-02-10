@@ -13,9 +13,9 @@
 
    - name: print the user output
      ansible.builtin.debug:
-       msg: "The user check output is: {{ user_check | to_nice_json }}"
+       msg: "{{ user_check }}"
   
    - name: createting the user if it does not exist
      ansible.builtin.command: "useradd robodshop"
      when: user_check.rc != 0
-     register: user_creation
+    #  register: user_creation
