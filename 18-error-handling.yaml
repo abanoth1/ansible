@@ -1,0 +1,17 @@
+# working on error handling in ansible playbook
+# This playbook will demonstrate how to handle errors in Ansible playbooks using the 'ignore_errors' directive and the 'failed_when' directive
+
+- name: user creation with error handling
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+   - name: check whether the user exists or not
+     ansible.builtin.command: "id robodshop"
+     register: user_check
+     ignore_errors: yes
+
+   - name: print the user output
+     ansible.builtin.debug:
+       msg: "The user check output is: {{ user_check }}"
+  
