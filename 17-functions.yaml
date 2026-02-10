@@ -5,6 +5,11 @@
   connection: local
   vars: 
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
+
+    # Here dictionary == map in ansible playbook
+    tags:
+      Application: Web
+      Environment: Production
   tasks:
     - name: Using the default variable in ansible playbook
       ansible.builtin.debug:
@@ -16,3 +21,10 @@
       ansible.builtin.debug:
         msg: "The technologies I am interested in are: {{ technologies.split(', ') }}" 
         # Using the 'split' filter to convert the string variable 'technologies' into a list by splitting it at the comma and space
+
+
+# dictionary to list conversion using the 'dict2items' filter
+    - name: Converting dictionary to list using dict2items function
+      ansible.builtin.debug:
+        msg: "The tags for my application are: {{ tags | dict2items }}" 
+        # Using the 'dict2items' filter to convert the dictionary variable 'tags' into a list of dictionaries, where each dictionary contains a key and value from the original dictionary        
