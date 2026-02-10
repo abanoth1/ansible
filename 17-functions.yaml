@@ -41,4 +41,16 @@
     - name: Converting list to dictionary using items2dict function
       ansible.builtin.debug:
         msg: "The tags for my application are: {{ listTags | items2dict(key_name='key', value_name='value') }}" 
-        # Using the 'items2dict' filter to convert the list of dictionaries variable 'listTags' back into a dictionary, where the 'key_name' parameter specifies the key to use for the dictionary and the 'value_name' parameter specifies the value to use for the dictionary
+  # Using the 'items2dict' filter to convert the list of dictionaries variable 'listTags' back into a dictionary, where the 'key_name' parameter specifies the key to use for the dictionary and the 'value_name' parameter specifies the value to use for the dictionary
+
+
+# Here i'm reading the yaml files and conveting them into variables using the 'lookup' plugin and the 'from_yaml' filter
+    - name: read the yaml files and convert it into variable
+      ansible.builtin.set_fact:
+        student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml  }}" 
+        # Using the 'to_json' filter to convert the dictionary variable 'tags' into a JSON string representation of the dictionary
+
+# Here i'm using the 'to_json' filter to convert the dictionary variable 'tags' into a JSON string representation of the dictionary
+    - name: Converting dictionary to JSON string using to_json function
+      ansible.builtin.debug:
+        msg: "The tags for my application in JSON format are: {{ tags | to_json }}"
