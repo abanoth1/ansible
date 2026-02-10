@@ -6,6 +6,7 @@
   vars: 
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
     name: "Ajay Naik Banoth"
+    gmail: "Banoth.Ajay@gmail.com "
 
     # Here dictionary == map in ansible playbook
     tags:
@@ -69,7 +70,7 @@
         msg: "My name in upper case is: {{ name | upper }}" 
         # Using the 'upper' filter to convert the string variable 'name' to upper case
 
-    # - name: Converting string to lower case using lower function
-    #   ansible.builtin.debug:
-    #     msg: "My name in lower case is: {{ name | lower }}" 
-    #     # Using the 'lower' filter to convert the string variable 'name' to lower case        
+    - name: Converting string to lower case using lower function
+      ansible.builtin.debug:
+        msg: "My gmail in lower case is: {{ gmail | lower }}" 
+        # Using the 'lower' filter to convert the string variable 'gmail' to lower case        
