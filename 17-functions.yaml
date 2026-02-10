@@ -7,6 +7,7 @@
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
     name: "Ajay Naik Banoth"
     gmail: "Banoth.Ajay@gmail.com "
+    ip_address: "192.168.1.1"
 
     # Here dictionary == map in ansible playbook
     tags:
@@ -74,3 +75,9 @@
       ansible.builtin.debug:
         msg: "My gmail in lower case is: {{ gmail | lower }}" 
         # Using the 'lower' filter to convert the string variable 'gmail' to lower case        
+
+ # Checking the ip address is valid or not using the 'ipaddr' filter
+    - name: Checking if the IP address is valid using ipaddr function
+      ansible.builtin.debug:
+        msg: "Is the IP address {{ ip_address }} valid? {{ ip_address | ansible.utils.ipv4 }}" 
+        # Using the 'ipaddr' filter to check if the string variable 'ip_address' is a valid IP address
