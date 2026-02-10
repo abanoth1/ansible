@@ -1,0 +1,9 @@
+# Here i'm working with functions in ansible playbook
+# This playbook will demonstrate how to use functions in Ansible playbooks
+- name: using the functions in ansible playbooks
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Using the default variable in ansible playbook
+      ansible.builtin.debug:
+        msg: "My name is {{ name | default ('Ansible')}}" # Using the 'default' filter to provide a default value for the variable 'name' if it is not defined
