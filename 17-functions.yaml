@@ -53,4 +53,4 @@
 # Here i'm using the 'to_json' filter to convert the dictionary variable 'tags' into a JSON string representation of the dictionary
     - name: Converting dictionary to JSON string using to_json function
       ansible.builtin.debug:
-        msg: "The tags for my application in JSON format are: {{ tags | to_json }}"
+        msg: "The tags for my application in JSON format are: {{ student_yaml | to_json }}"
