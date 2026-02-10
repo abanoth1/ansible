@@ -7,9 +7,17 @@
     technologies: DevOps, Cloud, Automation, Containerization # String variable containing a list of technologies
 
     # Here dictionary == map in ansible playbook
-  tags:
+    tags:
       Application: Web
       Environment: Production
+
+
+    # adding the list of tags in the dictionary variable 'tags' with key-value pairs representing the tag name and its value
+    listTags:
+    - key: "Application"
+      value: "Web"
+    - key: "Environment"
+      value: "Production"
   tasks:
     - name: Using the default variable in ansible playbook
       ansible.builtin.debug:
@@ -27,4 +35,10 @@
     - name: Converting dictionary to list using dict2items function
       ansible.builtin.debug:
         msg: "The tags for my application are: {{ tags | dict2items }}" 
-        # Using the 'dict2items' filter to convert the dictionary variable 'tags' into a list of dictionaries, where each dictionary contains a key and value from the original dictionary        
+        # Using the 'dict2items' filter to convert the dictionary variable 'tags' into a list of dictionaries, where each dictionary contains a key and value from the original dictionary 
+   
+# converting the list into maps or dictionaries using the 'items2dict' filter
+    - name: Converting list to dictionary using items2dict function
+      ansible.builtin.debug:
+        msg: "The tags for my application are: {{ listTags | items2dict(key_name='key', value_name='value') }}" 
+        # Using the 'items2dict' filter to convert the list of dictionaries variable 'listTags' back into a dictionary, where the 'key_name' parameter specifies the key to use for the dictionary and the 'value_name' parameter specifies the value to use for the dictionary
